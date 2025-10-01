@@ -1,20 +1,22 @@
 @font-face {
-    font-family: 'MedievalSharp';
-    src: url(./MedievalSharp-Regular.woff2);
+  font-family: "Orbitron";
+  src: url("./Orbitron-VariableFont_wght.woff2");
 }
 
 @font-face {
-    font-family: 'CinzelDecorative';
-    src: url('./CinzelDecorative-Regular.woff2');
+  font-family: "DaysOne";
+  src: url("./DaysOne-Regular.woff2");
 }
 
 :root {
-  --smoky-black: #110d07ff;
-  --licorice: #221707ff;
-  --dark-goldenrod: #b18443ff;
-  --earth-yellow: #ddae6fff;
-  --prime: 'MedievalSharp';
-  --body: 'CinzelDecorative';
+  --light-white: #ffffff;
+  --cyan-glow: #c7f9ff;
+  --coral: #ff6b3d;
+  --red-deep: #e64a19;
+  --dark-blue: #263238;
+  --deep-ocean: #002d52;
+  --prime: "Orbitron";
+  --body: "DaysOne";
 }
 
 * {
@@ -27,4 +29,81 @@ html,
 body {
   height: 100%;
   width: 100%;
+}
+
+body {
+  background-color: var(--color-text-dark-blue);
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+.splash-page {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  background-image: url("./1369477-final.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px;
+  padding-top: 160px;
+}
+
+.overlay {
+  position: absolute;
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom, var(--dark-blue) 0%, rgba(0, 0, 0, 0.6) 5%, transparent 40%, transparent 60%, rgba(0, 0, 0, 0.6) 95%, var(--dark-blue) 100%);
+}
+
+.box {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+}
+
+.box > h1 {
+  font-family: var(--prime);
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 40px;
+  color: var(--light-white);
+  text-align: center;
+  text-shadow: 0 0 12px var(--dark-blue), 0 0 24px var(--cyan-glow),
+    0 0 36px var(--cyan-glow);
+  letter-spacing: 2px;
+  -webkit-text-stroke: 3px var(--light-white);
+  margin-bottom: 2vw;
+}
+
+.box > button {
+  font-family: var(--body);
+  background-color: var(--light-white);
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 6px;
+  color: var(--red-deep);
+  -webkit-text-stroke: 1px var(--coral);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px var(--deep-ocean), 0 0 20px rgba(0, 45, 82, 0.5);
+  transition: all 0.3s ease;
+}
+
+.box > button:hover {
+  background: var(--coral);
+  color: var(--light-white);
+  box-shadow: 0 0 12px var(--coral), 0 0 24px rgba(255, 107, 61, 0.6);
+  transform: scale(1.05);
+  -webkit-text-stroke: 1px var(--light-white);
 }
